@@ -1,5 +1,5 @@
 {% set name = "placekey" %}
-{% set version = "0.0.10" %}
+{% set version = "0.0.12" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/placekey-{{ version }}.tar.gz
-  sha256: 25235e7d5733ba229464fa4de0dacfeda84063b9fbb52041ac67d04c9c35d6be
+  sha256: 3a53150094b3765e0e7fab97fe411d52230177ad70e7429d53308cf3daba9486
 
 build:
   number: 0
