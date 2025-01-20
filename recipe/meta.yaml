@@ -7,22 +7,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/placekey-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/placekey-{{ version }}.tar.gz
   sha256: 39bf744a26795f25b6a953fa97eef0d9e070b1af350e061e99550735951f5549
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - backoff
     - h3-py
-    - python >=3.6
+    - python >={{ python_min }}
     - ratelimit
     - requests
     - shapely
@@ -34,6 +34,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/Placekey/placekey-py
